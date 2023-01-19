@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Route, Routes } from 'react-router-dom';
+import GeneralContext from './contexts/GeneralContext.js';
 
 import Header from './Header.jsx';
+import AllCalls from './components/AllCalls.jsx';
+import ArchivedCalls from './components/ArchivedCalls.jsx';
 
 const App = () => {
   const [calls, setCalls] = useState([]);
+  const [archivedCalls, setArchivedCalls] = useState([]);
 
   // Retrieve all calls from API
   useEffect(() => {
@@ -14,6 +19,19 @@ const App = () => {
       });
   }, []);
   console.log("calls", calls);
+
+  // The two useEffects below will save the archived calls to local storage so that they stay on page refresh
+  useEffect(() => {
+    const archivedCalls = JSON.parse(localStorage.getItem('archive-info'));
+    if (archivedCalls) {
+      setArchivedCalls(archivedCalls);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('archive-info', JSON.stringify(archivedCalls));
+  }, [archivedCalls]);
+
 
   // The code below is used to automatically enable cross-domain requests when needed (Solves CORS error)
   (function () {
@@ -34,9 +52,16 @@ const App = () => {
   })();
 
   return (
-    <div className='container'>
-      <Header />
-      <div className="container-view">Some activities should be here</div>
+    <div>
+      <GeneralContext.Provider value={{ calls, archivedCalls, setArchivedCalls }}>
+        <div className='container'>
+          <Header />
+          <Routes>
+            <Route path='/' element={<AllCalls />} />
+            <Route path='/archivedcalls' element={<ArchivedCalls />} />
+          </Routes>
+        </div>
+      </GeneralContext.Provider>
     </div>
   );
 };
