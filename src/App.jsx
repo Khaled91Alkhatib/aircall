@@ -6,6 +6,7 @@ import GeneralContext from './contexts/GeneralContext.js';
 import Header from './Header.jsx';
 import AllCalls from './components/AllCalls.jsx';
 import ArchivedCalls from './components/ArchivedCalls.jsx';
+import Footer from './Footer.jsx';
 
 const App = () => {
   const [calls, setCalls] = useState([]);
@@ -32,6 +33,18 @@ const App = () => {
     localStorage.setItem('archive-info', JSON.stringify(archivedCalls));
   }, [archivedCalls]);
 
+  // useEffect(() => {
+  //   const calls = JSON.parse(localStorage.getItem('call-info'));
+  //   if (calls) {
+  //     setCalls(calls);
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem('call-info', JSON.stringify(calls));
+  // }, [calls]);
+
+
 
   // The code below is used to automatically enable cross-domain requests when needed (Solves CORS error)
   (function () {
@@ -53,13 +66,14 @@ const App = () => {
 
   return (
     <div>
-      <GeneralContext.Provider value={{ calls, archivedCalls, setArchivedCalls }}>
+      <GeneralContext.Provider value={{ calls, setCalls, archivedCalls, setArchivedCalls }}>
         <div className='container'>
           <Header />
           <Routes>
             <Route path='/' element={<AllCalls />} />
             <Route path='/archivedcalls' element={<ArchivedCalls />} />
           </Routes>
+          <Footer />
         </div>
       </GeneralContext.Provider>
     </div>
