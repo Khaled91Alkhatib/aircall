@@ -1,0 +1,65 @@
+.footer {
+  height: 50px;
+  background-color: white;
+  margin: 0 auto;
+  /* padding: 3px 0 0 0; */
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  width: 376px;
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-buttons {
+  border: none;
+  background-color: white;
+  color: grey;
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-buttons:hover {
+  cursor: pointer;
+  color: black;
+  scale: 1.1;
+}
+
+.footer-record:hover {
+  cursor: pointer;
+  border: 1px solid black;
+  scale: 1.1;
+
+}
+
+.tab-relations {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  align-items: center;
+}
+
+.footer-record {
+  border: 1px solid grey;
+  border-radius: 50%;
+  background-color: white;
+  color: red;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background-color: rgb(255, 31, 31);
+  color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}

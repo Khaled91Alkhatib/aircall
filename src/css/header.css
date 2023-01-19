@@ -8,6 +8,8 @@ header {
 }
 
 .logo-and-tabs {
+  position: fixed; /* Set the navbar to fixed position */
+  width: 376px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -60,7 +62,7 @@ header svg {
 }
 
 .navlinks:hover {
-  padding-bottom: 1em;
+  padding-bottom: 10px;
   color: black;
   cursor: pointer;
   border-bottom: 2px solid green;
