@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import GeneralContext from '../contexts/GeneralContext';
 
 import { SlCallIn, SlCallOut } from 'react-icons/sl';
@@ -6,11 +6,18 @@ import { FiArchive } from 'react-icons/fi';
 import "../css/AllCalls.css";
 
 const AllCalls = () => {
-  const { calls, setArchivedCalls, archivedCalls } = useContext(GeneralContext);
+  const { calls, setCalls, setArchivedCalls, archivedCalls } = useContext(GeneralContext);
   console.log("single calls", calls);
 
+  const onArchive = (call) => {
+    setArchivedCalls([...archivedCalls, call]);
+  };
+  const removeFromCalls = (id) => {
+    setCalls((pre) => pre.filter((item) => !(id === item.id)));
+  };
+
   return (
-    <div>
+    <div style={{ marginTop: "55px", marginBottom: "45px" }}>
       {calls.map((call) => (
         <div key={call.id}>
           <div className='date'>{new Date(call.created_at).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
@@ -32,7 +39,7 @@ const AllCalls = () => {
                   <div className='border-inarchive' />
                   <div className='border-inarchive' />
                 </div>
-                <button onClick={(prev) => { setArchivedCalls([...archivedCalls, call]); }} className="archive-button"><FiArchive className='archive-icon' /></button>
+                <button onClick={() => { onArchive(call); removeFromCalls(call.id); }} className="archive-button"><FiArchive className='archive-icon' /></button>
               </div>
             </div>
           </div>
