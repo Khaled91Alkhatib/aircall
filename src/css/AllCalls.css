@@ -1,0 +1,67 @@
+.date {
+  text-align: center;
+  margin: 1em 0 0.5em 0;
+  color: grey;
+}
+
+.main-allcalls {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+  max-width: 85%;
+  margin: auto;
+  padding: 1em;
+}
+
+.call-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-archive {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.border-dot-inarchive {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.border-inarchive {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  border-radius: 70%;
+  margin-bottom: 3px;
+  background-color: grey;
+}
+
+.archive-button {
+  border: none;
+  background-color: white;
+  padding: 0;
+}
+
+.archive-icon {
+  color: grey;
+}
+
+.archive-icon:hover {
+  cursor: pointer;
+  color: black;
+  scale: 1.1;
+}
