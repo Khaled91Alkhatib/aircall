@@ -19,7 +19,7 @@ const App = () => {
         setCalls(prev => res.data);
       });
   }, []);
-  console.log("calls", calls);
+  // console.log("calls", calls);
 
   // The two useEffects below will save the archived calls to local storage so that they stay on page refresh
   useEffect(() => {

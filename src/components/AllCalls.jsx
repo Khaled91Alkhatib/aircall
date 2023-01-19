@@ -7,7 +7,7 @@ import "../css/AllCalls.css";
 
 const AllCalls = () => {
   const { calls, setCalls, setArchivedCalls, archivedCalls } = useContext(GeneralContext);
-  console.log("single calls", calls);
+  // console.log("single calls", calls);
 
   const onArchive = (call) => {
     setArchivedCalls([...archivedCalls, call]);

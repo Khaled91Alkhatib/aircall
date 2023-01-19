@@ -8,7 +8,7 @@ import "../css/AllCalls.css";
 
 const ArchivedCalls = () => {
   const { calls, setCalls, archivedCalls, setArchivedCalls } = useContext(GeneralContext);
-  console.log('halla2', archivedCalls);
+  // console.log('halla2', archivedCalls);
 
   const onAddToCalls = (archivedCall) => {
     setCalls([...calls, archivedCall]);
