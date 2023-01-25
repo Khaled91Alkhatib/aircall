@@ -48,7 +48,7 @@ const App = () => {
 
   // The code below is used to automatically enable cross-domain requests when needed (Solves CORS error)
   (function () {
-    var cors_api_host = 'cors-anywhere.herokuapp.com';
+    var cors_api_host = 'charming-bat-singlet.cyclic.app';
     var cors_api_url = 'https://' + cors_api_host + '/';
     var slice = [].slice;
     var origin = window.location.protocol + '//' + window.location.host;
