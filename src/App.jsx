@@ -10,7 +10,6 @@ import Footer from './Footer.jsx';
 
 const App = () => {
   const [calls, setCalls] = useState([]);
-  const [archivedCalls, setArchivedCalls] = useState([]);
 
   // Retrieve all calls from API
   useEffect(() => {
@@ -20,31 +19,6 @@ const App = () => {
       });
   }, []);
   // console.log("calls", calls);
-
-  // The two useEffects below will save the archived calls to local storage so that they stay on page refresh
-  useEffect(() => {
-    const archivedCalls = JSON.parse(localStorage.getItem('archive-info'));
-    if (archivedCalls) {
-      setArchivedCalls(archivedCalls);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('archive-info', JSON.stringify(archivedCalls));
-  }, [archivedCalls]);
-
-  // useEffect(() => {
-  //   const calls = JSON.parse(localStorage.getItem('call-info'));
-  //   if (calls) {
-  //     setCalls(calls);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem('call-info', JSON.stringify(calls));
-  // }, [calls]);
-
-
 
   // The code below is used to automatically enable cross-domain requests when needed (Solves CORS error)
   (function () {
@@ -66,7 +40,7 @@ const App = () => {
 
   return (
     <div>
-      <GeneralContext.Provider value={{ calls, setCalls, archivedCalls, setArchivedCalls }}>
+      <GeneralContext.Provider value={{ calls, setCalls }}>
         <div className='container'>
           <Header />
           <Routes>

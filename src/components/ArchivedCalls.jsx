@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 const ArchivedCalls = () => {
-  const { calls, setCalls, archivedCalls, setArchivedCalls } = useContext(GeneralContext);
+  const { calls, setCalls } = useContext(GeneralContext);
   // console.log('halla2', archivedCalls);
 
   const removeArchiveCall = (id) => {

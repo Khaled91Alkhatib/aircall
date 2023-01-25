@@ -7,7 +7,7 @@ import "../css/AllCalls.css";
 import axios from 'axios';
 
 const AllCalls = () => {
-  const { calls, setCalls, setArchivedCalls, archivedCalls } = useContext(GeneralContext);
+  const { calls, setCalls } = useContext(GeneralContext);
   // console.log("single calls", calls);
 
   const handleArchiveCall = (id) => {
