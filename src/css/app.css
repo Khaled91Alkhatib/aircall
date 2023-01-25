@@ -18,3 +18,15 @@
 #app .container-view {
   padding: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  #app .container {
+    width: 70vw;
+    height: 100vh;
+  }
+
+  #app {
+    margin-top: 0;
+    font-size: 10px;
+  }
+}

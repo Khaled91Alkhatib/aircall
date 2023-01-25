@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 30%;
 }
 
@@ -71,4 +72,10 @@
 .main-archived-calls {
   margin-top: 55px;
   margin-bottom: 45px;
+}
+
+@media screen and (max-width: 600px) {
+  .main-archived-calls {
+    margin-bottom: 60px;
+  }
 }
