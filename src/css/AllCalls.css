@@ -1,3 +1,5 @@
+/* This file serves for both AllCalls.jsx and ArchivedCalls.css */
+
 .date {
   text-align: center;
   margin: 1em 0 0.5em 0;
@@ -64,4 +66,9 @@
   cursor: pointer;
   color: black;
   scale: 1.1;
+}
+
+.main-archived-calls {
+  margin-top: 55px;
+  margin-bottom: 45px;
 }
