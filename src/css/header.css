@@ -72,7 +72,10 @@ header svg {
   .logo-and-tabs {
     width: 70vw;
   }
+  .buttons{
+    padding: 0 10px;
+  }
   .navlinks {
-    font-size: 10px;
+    font-size: 9px;
   }
 }
