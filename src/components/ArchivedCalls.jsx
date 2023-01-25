@@ -23,7 +23,7 @@ const ArchivedCalls = () => {
       {archivedCalls.length === 0 ?
         <div>No Archived Calls</div>
         :
-        <div style={{ marginTop: "55px", marginBottom: "45px" }}>
+        <div className='main-archived-calls'>
           {archivedCalls.map((archivedCall) => (
             <div key={archivedCall.id}>
               <div className='date'>{new Date(archivedCall.created_at).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</div>

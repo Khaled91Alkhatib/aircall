@@ -17,7 +17,7 @@ const AllCalls = () => {
   };
 
   return (
-    <div style={{ marginTop: "55px", marginBottom: "45px" }}>
+    <div className='main-archived-calls'>
       {calls.map((call) => (
         <div key={call.id}>
           <div className='date'>{new Date(call.created_at).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
