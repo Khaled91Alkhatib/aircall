@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import GeneralContext from '../contexts/GeneralContext';
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
 
 import { SlCallIn, SlCallOut } from 'react-icons/sl';
 import { TbArchiveOff } from 'react-icons/tb';
+import "react-toastify/dist/ReactToastify.css";
 import "../css/AllCalls.css";
-import axios from 'axios';
 
 
 const ArchivedCalls = () => {
@@ -20,6 +22,7 @@ const ArchivedCalls = () => {
           }
           return call;
         });
+        toast("Call Removed From Archives!");
         setCalls(updatedCalls);
         // console.log("updatecalls", updatedCalls);
         // console.log('archive thing', res);
@@ -54,6 +57,7 @@ const ArchivedCalls = () => {
                       <div className='border-inarchive' />
                     </div>
                     <button onClick={() => { removeArchiveCall(archivedCall.id); }} className="archive-button"><TbArchiveOff className='archive-icon' /></button>
+                    <ToastContainer autoClose={2000} />
                   </div>
                 </div>
               </div>

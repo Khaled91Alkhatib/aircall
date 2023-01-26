@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import GeneralContext from '../contexts/GeneralContext';
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
 
 import { SlCallIn, SlCallOut } from 'react-icons/sl';
 import { FiArchive } from 'react-icons/fi';
+import "react-toastify/dist/ReactToastify.css";
 import "../css/AllCalls.css";
-import axios from 'axios';
+
 
 const AllCalls = () => {
   const { calls, setCalls } = useContext(GeneralContext);
@@ -19,6 +22,7 @@ const AllCalls = () => {
           }
           return call;
         });
+        toast("Call Archived Successfully!");
         setCalls(updatedCalls);
         // console.log("updatecalls", updatedCalls);
         // console.log('archive thing', res);
@@ -51,6 +55,7 @@ const AllCalls = () => {
                     <div className='border-inarchive' />
                   </div>
                   <button onClick={() => { handleArchiveCall(call.id); }} className="archive-button"><FiArchive className='archive-icon' /></button>
+                  <ToastContainer autoClose={2000} />
                 </div>
               </div>
             </div>
